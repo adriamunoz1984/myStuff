@@ -1,0 +1,242 @@
+.card-groups
+{
+   
+    width:100vw;
+  
+    
+    perspective: 800px;
+}
+
+.cards
+{
+    position: relative;
+    display: inline-block;
+    background:gray;
+    transform-style: preserve-3d;
+    transform-origin:center;
+    height:40vw;
+    width:19vw;
+/*               border:2px solid #fff;*/
+    padding:2vw;   
+    margin:0px;
+/*               float:left;*/
+}
+
+.cards:hover
+{
+    transform: rotateY(-15deg);
+    transition:transform 0.25s linear;
+    z-index: 3;
+  
+}
+
+p
+{
+    color:#fff;
+    font-size: 1.25vw;
+    
+}
+
+.iconb
+{
+    background:red;
+   height: 10vw;
+    width:10vw;
+    border-radius: 10vw;
+    text-align: center;
+    margin: 0 auto;
+    top:5vw;
+ }
+.box-inner
+{
+    position: absolute;
+    height: 2vw;
+    width:5vw;
+    
+    transform: translateZ(20px);
+    
+ }
+.walk-inner
+{
+    outline:0.25vw solid red;
+ }
+
+ /***********************************************************/
+ 
+.rotating-box
+{
+    position: relative;
+    width: 20vw;
+    height:20vw;
+    margin: 10px auto;
+    perspective: 0px;
+    top:25vh;
+    
+   
+}
+
+.single-rb
+{
+    width: 20vw;
+/*    animation: rotate 15s linear infinite;*/
+    transform-style: preserve-3d;
+   
+}
+
+.single-rb .box
+{
+    height: 20vw;
+    width:20vw;
+    outline: 2px solid red;
+}
+/*
+
+.single-rb div:not(.box)
+{
+    position: absolute;
+    width:20vw;
+    height:20vw;
+   
+}
+*/
+.single-rb .front-side,
+.single-rb .back-side,
+.single-rb .right-side,
+.single-rb .left-side,
+.single-rb .top-side,
+.single-rb .bottom-side
+{
+    position: absolute;
+    width:20vw;
+    height:20vw;
+    margin:-5vw;
+    margin-bottom: 0vw;
+}
+
+/*Inner squres**/
+.single-rb .front-sideInner,
+.single-rb .back-sideInner,
+.single-rb .right-sideInner,
+.single-rb .left-sideInner,
+.single-rb .top-sideInner,
+.single-rb .bottom-sideInner
+{
+    position: absolute;
+    width:10vw;
+    height:10vw;
+    background:gray;
+}
+/**/
+
+.button-g
+{
+    position: relative;
+    top:20vw;
+}
+.single-rb .front-sideInner .box-inner,
+.single-rb .back-sideInner .box-inner,
+.single-rb .right-sideInner .box-inner,
+.single-rb .left-sideInner .box-inner,
+.single-rb .top-sideInner .box-inner,
+.single-rb .bottom-sideInner .box-inner
+{
+    height: 10vw;
+    width:10vw;
+    outline: 0.25vw solid black;
+}
+
+.front-sideInner
+{
+    transform: translateZ(5vw);
+}
+
+.front-sideInner .box-inner
+{
+    background:gray;
+}
+
+.back-sideInner
+{
+    transform: rotateY(180deg) translateZ(5vw);
+}
+
+.right-sideInner
+{
+    transform: rotateY(90deg) 
+        translateX(5vw);
+    transform-origin: right;
+}
+
+.left-sideInner
+{
+    transform: rotateY(-90deg)
+    translateX(-5vw);
+    transform-origin: left;
+}
+
+.top-sideInner
+{
+    
+    transform: rotateX(45deg) translate3d(0vw,-4vw, 4vw);
+    transform-origin: top;
+}
+
+.topInOne
+{
+    
+    transform: rotateX(-45deg) translate3d(0vw,-4vw, -4vw);
+    transform-origin: top;
+}
+
+.bottom-sideInner
+{
+    transform: rotateX(90deg)
+    translateY(5vw);
+    transform-origin: bottom;
+}
+
+
+.front-side
+{
+    transform: translateZ(10vw);
+}
+
+.back-side
+{
+    transform: rotateY(180deg) translateZ(10vw);
+    animation: rotateInner 10s linear;
+}
+
+.left-side
+{
+    transform: rotateY(-90deg)
+    translateX(-10vw);
+    transform-origin: left;
+}
+
+
+.right-side
+{
+    transform: rotateY(90deg) 
+        translateX(10vw);
+    transform-origin: right;
+}
+.top-side
+{
+    transform: rotateX(-90deg)
+    translateY(-10vw);
+    transform-origin: top;
+}
+
+.bottom-side
+{
+    transform: rotateX(90deg)
+    translateY(10vw);
+    transform-origin: bottom;
+}
+
+@keyframes rotate
+{
+    0%{transform:rotateY(0);}
+    100%{transform:rotateY(359deg);}
+}

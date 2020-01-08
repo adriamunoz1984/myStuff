@@ -1,0 +1,322 @@
+     <!--Card Deck Test-->
+       
+     <style>
+         
+        .card-groups
+        {
+           
+            width:100vw;
+          
+            
+            perspective: 800px;
+        }
+        
+        .cards
+        {
+            position: relative;
+            display: inline-block;
+            background:gray;
+            transform-style: preserve-3d;
+            transform-origin:center;
+            height:40vw;
+            width:19vw;
+/*               border:2px solid #fff;*/
+            padding:2vw;   
+            margin:0px;
+/*               float:left;*/
+        }
+        
+        .cards:hover
+        {
+            transform: rotateY(-15deg);
+            transition:transform 0.25s linear;
+            z-index: 3;
+          
+        }
+       
+        p
+        {
+            color:#fff;
+            font-size: 1.25vw;
+            
+        }
+        
+        .iconb
+        {
+            background:red;
+           height: 10vw;
+            width:10vw;
+            border-radius: 10vw;
+            text-align: center;
+            margin: 0 auto;
+            top:5vw;
+         }
+        .box-inner
+        {
+            position: absolute;
+            height: 2vw;
+            width:5vw;
+            
+            transform: translateZ(20px);
+            
+         }
+        .walk-inner
+        {
+            outline:0.25vw solid red;
+         }
+        
+    </style>
+
+<div class="card-groups">
+    <div class="cards">
+        <div class="iconb"></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem deleniti cupiditate deserunt totam numquam nihil minus, atque quam fuga, culpa voluptatem laboriosam? Qui ut dicta reprehenderit nam nobis! Voluptatem?</p>
+    </div>
+    
+     <div class="cards">
+        <div class="iconb"></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem deleniti cupiditate deserunt totam numquam nihil minus, atque quam fuga, culpa voluptatem laboriosam? Qui ut dicta reprehenderit nam nobis! Voluptatem?</p>
+    </div>
+    
+     <div class="cards">
+        <div class="iconb"></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem deleniti cupiditate deserunt totam numquam nihil minus, atque quam fuga, culpa voluptatem laboriosam? Qui ut dicta reprehenderit nam nobis! Voluptatem?</p>
+    </div>
+     <div class="cards">
+        <div class="iconb"></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem deleniti cupiditate deserunt totam numquam nihil minus, atque quam fuga, culpa voluptatem laboriosam? Qui ut dicta reprehenderit nam nobis! Voluptatem?</p>
+    </div>
+     <div class="cards">
+        <div class="iconb"></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem deleniti cupiditate deserunt totam numquam nihil minus, atque quam fuga, culpa voluptatem laboriosam? Qui ut dicta reprehenderit nam nobis! Voluptatem?</p>
+    </div>
+   
+</div>
+   
+<!--**************-->
+<div class="rotating-box">
+    <div class="single-rb">
+        <div class="front-side">
+            <div class="box">
+                
+            </div>
+            
+            
+        </div>
+        <div class="front-sideInner">
+            <div class="box-inner"> </div> 
+        </div>
+        
+        <div class="back-side">
+            <div class="box"></div>
+        </div>
+         <div class="back-sideInner">
+            <div class="box-inner">
+                
+            </div>
+            
+            
+        </div>
+        
+        <div class="left-side">
+            <div class="box"></div>
+        </div>
+         <div class="left-sideInner">
+            <div class="box-inner">
+                
+            </div>
+            
+            
+        </div>
+        <div class="left-sideInner walk-way">
+            <div class="box-inner walk-inner"> </div> 
+        </div>
+        
+        <div class="right-side">
+            <div class="box"></div>
+        </div>
+         <div class="right-sideInner">
+            <div class="box-inner">
+                
+            </div>
+            
+            
+        </div>
+        
+        <div class="top-side">
+            <div class="box"></div>
+        </div>
+         <div class="top-sideInner topInOne">
+            <div class="box-inner">
+                
+            </div>
+            
+            
+        </div>
+        <div class="top-sideInner topInTwo">
+            <div class="box-inner">
+                
+            </div>
+            
+            
+        </div>
+        
+        <div class="bottom-side">
+            <div class="box"></div>
+        </div>
+         <div class="bottom-sideInner">
+            <div class="box-inner">
+                
+            </div>
+            
+            
+        </div>
+        
+        
+    </div>
+</div>
+<div class="button-g">
+<button class="buttonBox but1">Front</button>
+<button class="buttonBox but2">Right</button>
+<button class="buttonBox but3">Left</button>
+<button class="buttonBox but4">Back</button>
+
+<button class="buttonBox but5">Top</button>
+<button class="buttonBox but6">Bottom</button>
+
+
+<button class="buttonBox but10">bottom</button>
+<button class="buttonBox but11">up</button>
+<button class="buttonBox but12">bottom</button>
+
+<button class="buttonBox but13">up</button>
+<button class="buttonBox but14">bottom</button>
+<button class="buttonBox but18">rotate auto</button>
+
+</div>
+
+<script>
+$(function()
+ {
+    $(".but1").click(function()
+    {
+        
+        $(".single-rb").css({"transform":"rotateY(90deg)","transition":"transform 1s linear"});  
+        
+        $(".rotating-box").css({"perspective":"800px", "transition":"perspective 1s linear"});
+    });
+    
+    
+    $(".but2").click(function()
+    {
+        $(".single-rb").css({"transform":"rotateY(180deg)","transition":"transform 1s linear"});  
+        
+        $(".rotating-box").css({"perspective":"800px", "transition":"perspective 1s linear"});
+    });
+    $(".but3").click(function()
+    {
+        $(".single-rb").css({"transform":"rotateY(-90deg)","transition":"transform 1s linear"});  
+        
+        $(".rotating-box").css({"perspective":"800px", "transition":"perspective 1s linear"});
+    });
+    $(".but4").click(function()
+    {
+        $(".single-rb").css({"transform":"rotateY(-180deg)","transition":"transform 1s linear"});  
+        $(".rotating-box").css({"perspective":"800px","transition":"perspective 1s linear"});  
+        
+    });
+    
+     $(".but5").click(function()
+    {
+        $(".single-rb").css({"transform":"rotateX(-90deg)","transition":"transform 1s linear"});  
+        
+        $(".rotating-box").css({"perspective":"800px", "transition":"perspective 1s linear"});
+    });
+    $(".but6").click(function()
+    {
+        $(".single-rb").css({"transform":"rotateX(-180deg)","transition":"transform 1s linear"});  
+        $(".rotating-box").css({"perspective":"800px","transition":"perspective 1s linear"});  
+        
+    });
+    
+     $(".but7").click(function()
+    {
+        $(".single-rb").css({"transform":"rotateX(90deg)","transition":"transform 1s linear"});  
+        
+        $(".rotating-box").css({"perspective":"800px", "transition":"perspective 1s linear"});
+    });
+    $(".but8").click(function()
+    {
+        $(".single-rb").css({"transform":"rotateX(180deg)","transition":"transform 1s linear"});  
+        $(".rotating-box").css({"perspective":"800px","transition":"perspective 1s linear"});  
+        
+    });
+    
+     $(".but9").click(function()
+    {
+        $(".single-rb").css({"transform":"rotateZ(-90deg)","transition":"transform 1s linear"});  
+        
+        $(".rotating-box").css({"perspective":"800px", "transition":"perspective 1s linear"});
+    });
+    $(".but10").click(function()
+    {
+        $(".single-rb").css({"transform":"rotateZ(-180deg)","transition":"transform 1s linear"});  
+        $(".rotating-box").css({"perspective":"800px","transition":"perspective 1s linear"});  
+        
+    }); 
+    
+    $(".but11").click(function()
+    {
+        $(".single-rb").css({"transform":"rotateZ(90deg)","transition":"transform 1s linear"});  
+        
+        $(".rotating-box").css({"perspective":"800px", "transition":"perspective 1s linear"});
+    });
+    $(".but12").click(function()
+    {
+        $(".single-rb").css({"transform":"rotateZ(180deg)","transition":"transform 1s linear"});  
+        $(".rotating-box").css({"perspective":"800px","transition":"perspective 1s linear"});  
+        
+    }); 
+    
+    $(".but13").click(function()
+    {
+        $(".single-rb").css({"transform":"rotateY(-45deg)","transition":"transform 1s linear"});  
+        
+        $(".rotating-box").css({"perspective":"800px", "transition":"perspective 1s linear"});
+    });
+    $(".but14").click(function()
+    {
+        $(".single-rb").css({"transform":"rotateY(-135deg)","transition":"transform 1s linear"});  
+        $(".rotating-box").css({"perspective":"800px","transition":"perspective 1s linear"});  
+        
+    }); $(".but15").click(function()
+    {
+        $(".single-rb").css({"transform":"rotateZ(45deg)","transition":"transform 1s linear"});  
+        
+        $(".rotating-box").css({"perspective":"800px", "transition":"perspective 1s linear"});
+    });
+    $(".but16").click(function()
+    {
+        $(".single-rb").css({"transform":"rotateZ(135deg)","transition":"transform 10s linear"});  
+        $(".rotating-box").css({"perspective":"800px","transition":"perspective 10s linear"});  
+        
+    });
+    
+    
+    
+    $(".but17").click(function()
+    {
+        $(".single-rb").css({"transform":"rotateX(-45deg)","transition":"transform 1s linear ease-in-out"});  
+        $(".rotating-box").css({"perspective":"800px","transition":"perspective 1s linear"});  
+        
+    });
+    
+       $(".but18").click(function()
+    {
+        $(".single-rb").css({"transform":"rotateY(340deg)","transition":"transform 5s linear ease-in-out"});  
+        $(".rotating-box").css({"perspective":"800px","transition":"perspective 5s linear"});  
+        
+    });
+    
+});
+</script>

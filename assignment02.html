@@ -1,0 +1,75 @@
+<!-- Assignment Number 2: Guess the color
+     by Adrian Munoz-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Color Guessing Game</title>
+</head>
+<body onload="do_game()">
+
+  <script type="text/javascript">
+
+    //Global Variables //
+    var target;
+    var guess_input;
+    var finished = false;
+    var guesses = 0;
+    var colors = ["blue", "teal", "navy", "tomato", "maroon", "purple"];
+
+    var sorted_colors = colors.sort();//Sort method alphabatizes the colors array
+
+/************************************Functions*************************************/
+    /********************************Do Game***************************************/
+    function do_game() 
+    {
+      var random_number = Math.random() * sorted_colors.length; //Created random number by the length og the array
+      target = sorted_colors[Math.floor(random_number)]; //removes the decimals
+
+      alert("pssssst! here's a hint the word sounds like sh" + target);
+
+      while (!finished) 
+      {
+        guess_input = prompt(" I am thinking of one of these colors: \n\n" + colors.join(", ") +
+          "\n\n What color am I thinking of?");
+
+        guesses += 1;
+        finished = check_guess();
+      }
+    }
+
+    /********************************Check Guess***************************************/
+    function check_guess() 
+    {
+        //If the word does not match anything in the array
+        //This statement uses 'indexOf' to filter through the array and find the specified work entered by the user. "if 'Indexof' cant find anything it returns a value of '-1' "
+
+        if (sorted_colors.indexOf(guess_input) == -1)
+        {
+            alert("Sorry, I don't recoginize your color. \n\n" + "Please try again.");
+            return false;
+        }
+
+        //If User input is greater alphabetically than the target word
+        if (guess_input > target) 
+        {
+          alert("Sorry, your guess is not correct!\n\n " + "Hint: your color is alphabetically higher than mine. \n\n " + "Please try again.");
+          return false;
+        }
+
+        //If User input is smaller alphabetically than the target word
+        if (guess_input < target) 
+        {
+          alert("Sorry, your guess is not correct! \n\n " + "Hint: your color is alphabetically lower than mine. \n\n" + "Please try again.");
+          return false;
+        }
+
+          myBody= document.getElementsByTagName("body")[0];
+          myBody.style.background= target;
+          alert("Congratulations! You have guessed the color! \n\n" + "It took you " + guesses + " to finish the game! \n\n" + "You can the color in the background.");
+          return true;
+  
+    }
+  </script>
+</body>
+</html>
