@@ -5,25 +5,49 @@
 <!-- Most objets are set to absolute and positioned into place. the 'vw' units keep everything aligned-->
 
 <style>
+
 .menuText
-{
-    position:absolute;
-    display:inline-block;
-    outline:red;
-}
+    {
+        position:absolute;
+        z-index:6;
+        width:52vw;
+        height:27.5vw;
+        display:inline-block;
+        outline:2px solid red;
+    }
 
-.dent
-{
-    position:absolute;
-    z-index:4;
-    width: 5vw;
-    height: 5vw;
-    background:#fff;
-}
+    .textGroup
+    {
+        display: inline-block;
+        width:33.33%;
+        height: 99%;
+        outline:0.2vw solid blue;
+    }
+    .dTop
+    {
+        position:absolute;
+        left:5.8vw;
+        top:11vw;
+        z-index:7;
+        width:5vw;
+        height:3.5vw;
+        background:red;
+    }
 
+    .dTop:hover
+    {
+        background:green;
+        cursor: pointer;
+    }
 </style>
 <div class="controllerMenu">
-    <div class="dent"></div>
+    <!-- Section of the controller leading to the cord-->
+    <div class="dents dentOne"></div>
+    <div class="dents dentTwo"></div>
+    <div class="dents dentThree"></div>
+
+    <button class="dTop"></button>
+
     <div class="cont-outer"> <!-- Outer Color of the Controller-->
        
         <div class="cont-inner">  <!-- Inner colors and content section-->
@@ -31,7 +55,7 @@
                 D-pad, Start Select, A and B buttons-->
             <div class="d-pad conColumn"> <!-- Group one D-Pad -->
                 <div class="d-pad-wrapper"> <!-- sorrounds the d-pad to position it as a unit-->
-                    <div class="d-hor d-all">   <!-- Was designed as two rectangles one centered and parallel to the other-->  
+                    <div class="d-hor d-all">   <!-- Was designed as two rectangles one centered and parallel to the other-->
                     </div>
                     <div class="d-ver d-all">
                         <div class="d-dent"></div>
@@ -85,7 +109,9 @@
         </div>
     </div>
     <div class="menuText">
-        <div class="textGroupOne textGroup"></div>
+        <div class="textGroupOne textGroup">
+            
+        </div>
         <div class="textGroupTwo textGroup"></div>
         <div class="textGroupThree textGroup"></div>
     </div>

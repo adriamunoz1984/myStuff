@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-menu-controller',
@@ -10,6 +11,13 @@ export class MenuControllerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    $.fn.clickers = function(){ 
+      alert('You have successfully defined the function!'); 
+      console.log("Hello There");
+  }
+  $(".dTop").click(function(){
+      $.fn.clickers();
+  });
   }
 
 }

@@ -1,3 +1,4 @@
+    
     .cont-outer
     {
         position:absolute;
@@ -288,6 +289,35 @@
     top:4vw;
     right:2vw;
 }
+
+.dents
+{
+    position:absolute;
+    left:14vw;
+    top:0vw;
+    z-index:4;
+    width: 3vw;
+    height: 2vw;
+    background:rgb(158, 156, 156);
+}
+.dentOne
+{
+    top:0vw;
+    z-index:5;
+    background:#cecfcf; 
+    width:1vw;
+    height:2vw;
+    box-shadow: 0.5vw 0vw 0.6vw rgba(0,0,0,0.4);
+}
+
+.dentThree
+{
+    z-index:5;
+    top:1.5vw;
+    left:14.5vw;
+    background:#cecfcf; 
+}
+
 
 
 
