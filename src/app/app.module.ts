@@ -6,6 +6,7 @@ import { MenuControllerComponent } from './menu-controller/menu-controller.compo
 import { PerpTestComponent } from './perp-test/perp-test.component';
 import { AbButtonsComponent } from './ab-buttons/ab-buttons.component';
 import { NavBar1Component } from './nav-bar1/nav-bar1.component';
+import { GuessGameComponent } from './guess-game/guess-game.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { NavBar1Component } from './nav-bar1/nav-bar1.component';
     MenuControllerComponent,
     PerpTestComponent,
     AbButtonsComponent,
-    NavBar1Component
+    NavBar1Component,
+    GuessGameComponent
   ],
   imports: [
     BrowserModule

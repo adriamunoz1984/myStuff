@@ -23,30 +23,79 @@
         height: 99%;
         outline:0.2vw solid blue;
     }
-    .dTop
+    .dClick
     {
         position:absolute;
-        left:5.8vw;
-        top:11vw;
+        border: none;
+        left:6.8vw;
+        top:12vw;
         z-index:7;
         width:5vw;
         height:3.5vw;
-        background:red;
+        background:transparent;
+        /* outline:0.25vw solid red; */
     }
 
-    .dTop:hover
+    .dLft
     {
-        background:green;
-        cursor: pointer;
+        left:3.5vw;
+        top:15.75vw;
+        height:4.5vw;
+        width:3vw;
     }
+
+    .dRgt
+    {
+        left:12vw;
+        top:15.75vw;
+        height:4.5vw;
+        width:3vw;
+    }
+    .dBtm
+    {
+        left:6.8vw;
+        top:20.5vw;
+        width:5vw;
+        height:3.5vw; 
+    }
+
+    .menuText
+    {
+
+    }
+    .textG
+    {
+        display:none;
+        position:absolute;
+        z-index:7;
+        font-family: "Nintender";
+        font-size:2vw;
+        color: red;
+    }
+
+    .textOne
+    {
+        top:8vw;
+        left: 6vw;
+    }
+    .textTwo
+    {
+        top:12vw;
+        left: 1vw;
+    }
+    
 </style>
+    
 <div class="controllerMenu">
     <!-- Section of the controller leading to the cord-->
     <div class="dents dentOne"></div>
     <div class="dents dentTwo"></div>
     <div class="dents dentThree"></div>
 
-    <button class="dTop"></button>
+    <button class="dClick dTop"></button>
+    <button class="dClick dLft"></button>
+    <button class="dClick dRgt"></button>
+    <button class="dClick dBtm"></button>
 
     <div class="cont-outer"> <!-- Outer Color of the Controller-->
        
@@ -110,7 +159,8 @@
     </div>
     <div class="menuText">
         <div class="textGroupOne textGroup">
-            
+            <label for="" class="textG textOne">Home</label>
+            <label for="" class="textG textTwo">About</label>
         </div>
         <div class="textGroupTwo textGroup"></div>
         <div class="textGroupThree textGroup"></div>

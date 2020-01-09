@@ -100,8 +100,33 @@
    
 }
 */
+.single-rb .front-side,
+.single-rb .back-side,
+.single-rb .right-side,
+.single-rb .left-side,
+.single-rb .top-side,
+.single-rb .bottom-side
+{
+    position: absolute;
+    width:20vw;
+    height:20vw;
+    margin:-5vw;
+    margin-bottom: 0vw;
+}
 
-
+/*Inner squres**/
+.single-rb .front-sideInner,
+.single-rb .back-sideInner,
+.single-rb .right-sideInner,
+.single-rb .left-sideInner,
+.single-rb .top-sideInner,
+.single-rb .bottom-sideInner
+{
+    position: absolute;
+    width:10vw;
+    height:10vw;
+    background:gray;
+}
 /**/
 
 .button-g
@@ -109,11 +134,107 @@
     position: relative;
     top:20vw;
 }
+.single-rb .front-sideInner .box-inner,
+.single-rb .back-sideInner .box-inner,
+.single-rb .right-sideInner .box-inner,
+.single-rb .left-sideInner .box-inner,
+.single-rb .top-sideInner .box-inner,
+.single-rb .bottom-sideInner .box-inner
+{
+    height: 10vw;
+    width:10vw;
+    outline: 0.25vw solid black;
+}
+
+.front-sideInner
+{
+    transform: translateZ(5vw);
+}
+
+.front-sideInner .box-inner
+{
+    background:gray;
+}
+
+.back-sideInner
+{
+    transform: rotateY(180deg) translateZ(5vw);
+}
+
+.right-sideInner
+{
+    transform: rotateY(90deg) 
+        translateX(5vw);
+    transform-origin: right;
+}
+
+.left-sideInner
+{
+    transform: rotateY(-90deg)
+    translateX(-5vw);
+    transform-origin: left;
+}
+
+.top-sideInner
+{
+    
+    transform: rotateX(45deg) translate3d(0vw,-4vw, 4vw);
+    transform-origin: top;
+}
+
+.topInOne
+{
+    
+    transform: rotateX(-45deg) translate3d(0vw,-4vw, -4vw);
+    transform-origin: top;
+}
+
+.bottom-sideInner
+{
+    transform: rotateX(90deg)
+    translateY(5vw);
+    transform-origin: bottom;
+}
 
 
+.front-side
+{
+    transform: translateZ(10vw);
+}
+
+.back-side
+{
+    transform: rotateY(180deg) translateZ(10vw);
+    animation: rotateInner 10s linear;
+}
+
+.left-side
+{
+    transform: rotateY(-90deg)
+    translateX(-10vw);
+    transform-origin: left;
+}
 
 
+.right-side
+{
+    transform: rotateY(90deg) 
+        translateX(10vw);
+    transform-origin: right;
+}
+.top-side
+{
+    transform: rotateX(-90deg)
+    translateY(-10vw);
+    transform-origin: top;
+}
 
+.bottom-side
+{
+    transform: rotateX(90deg)
+    translateY(10vw);
+    transform-origin: bottom;
+}
 
 @keyframes rotate
 {

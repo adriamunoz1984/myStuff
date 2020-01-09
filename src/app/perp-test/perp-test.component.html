@@ -1,322 +1,343 @@
-     <!--Card Deck Test-->
-       
-     <style>
+ <!--Card Deck Test-->
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+crossorigin="anonymous"></script>
+ <style>
          
-        .card-groups
-        {
-           
-            width:100vw;
-          
-            
-            perspective: 800px;
-        }
-        
-        .cards
-        {
-            position: relative;
-            display: inline-block;
-            background:gray;
-            transform-style: preserve-3d;
-            transform-origin:center;
-            height:40vw;
-            width:19vw;
-/*               border:2px solid #fff;*/
-            padding:2vw;   
-            margin:0px;
-/*               float:left;*/
-        }
-        
-        .cards:hover
-        {
-            transform: rotateY(-15deg);
-            transition:transform 0.25s linear;
-            z-index: 3;
-          
-        }
+    .card-groups
+    {
        
-        p
-        {
-            color:#fff;
-            font-size: 1.25vw;
-            
-        }
+        width:100vw;
+      
         
-        .iconb
-        {
-            background:red;
-           height: 10vw;
-            width:10vw;
-            border-radius: 10vw;
-            text-align: center;
-            margin: 0 auto;
-            top:5vw;
-         }
-        .box-inner
-        {
-            position: absolute;
-            height: 2vw;
-            width:5vw;
-            
-            transform: translateZ(20px);
-            
-         }
-        .walk-inner
-        {
-            outline:0.25vw solid red;
-         }
+        perspective: 800px;
+    }
+    
+    .cards
+    {
+        position: relative;
+        display: inline-block;
+        background:gray;
+        transform-style: preserve-3d;
+        transform-origin:center;
+        height:40vw;
+        width:19vw;
+/*               border:2px solid #fff;*/
+        padding:2vw;   
+        margin:0px;
+/*               float:left;*/
+    }
+    
+    .cards:hover
+    {
+        transform: rotateY(-15deg);
+        transition:transform 0.25s linear;
+        z-index: 3;
+      
+    }
+   
+    p
+    {
+        color:#fff;
+        font-size: 1.25vw;
         
-    </style>
+    }
+    
+    .iconb
+    {
+        background:red;
+       height: 10vw;
+        width:10vw;
+        border-radius: 10vw;
+        text-align: center;
+        margin: 0 auto;
+        top:5vw;
+     }
+    .box-inner
+    {
+        position: absolute;
+        height: 2vw;
+        width:5vw;
+        
+        transform: translateZ(20px);
+        
+     }
+    .walk-inner
+    {
+        outline:0.25vw solid red;
+     }
 
-<div class="card-groups">
-    <div class="cards">
-        <div class="iconb"></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem deleniti cupiditate deserunt totam numquam nihil minus, atque quam fuga, culpa voluptatem laboriosam? Qui ut dicta reprehenderit nam nobis! Voluptatem?</p>
-    </div>
-    
-     <div class="cards">
-        <div class="iconb"></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem deleniti cupiditate deserunt totam numquam nihil minus, atque quam fuga, culpa voluptatem laboriosam? Qui ut dicta reprehenderit nam nobis! Voluptatem?</p>
-    </div>
-    
-     <div class="cards">
-        <div class="iconb"></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem deleniti cupiditate deserunt totam numquam nihil minus, atque quam fuga, culpa voluptatem laboriosam? Qui ut dicta reprehenderit nam nobis! Voluptatem?</p>
-    </div>
-     <div class="cards">
-        <div class="iconb"></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem deleniti cupiditate deserunt totam numquam nihil minus, atque quam fuga, culpa voluptatem laboriosam? Qui ut dicta reprehenderit nam nobis! Voluptatem?</p>
-    </div>
-     <div class="cards">
-        <div class="iconb"></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem deleniti cupiditate deserunt totam numquam nihil minus, atque quam fuga, culpa voluptatem laboriosam? Qui ut dicta reprehenderit nam nobis! Voluptatem?</p>
-    </div>
+     
+.single-rb
+{
+    width: 20vw;
+/*    animation: rotate 15s linear infinite;*/
+    transform-style: preserve-3d;
    
-</div>
-   
+}
+
+.single-rb .box
+{
+    height: 20vw;
+    width:20vw;
+    outline: 2px solid red;
+}
+.front-side
+{
+    transform: translateZ(10vw);
+}
+
+.back-side
+{
+    transform: rotateY(180deg) translateZ(10vw);
+    animation: rotateInner 10s linear;
+}
+
+.left-side
+{
+    transform: rotateY(-90deg)
+    translateX(-10vw);
+    transform-origin: left;
+}
+
+
+.right-side
+{
+    transform: rotateY(90deg) 
+        translateX(10vw);
+    transform-origin: right;
+}
+.top-side
+{
+    transform: rotateX(-90deg)
+    translateY(-10vw);
+    transform-origin: top;
+}
+
+.bottom-side
+{
+    transform: rotateX(90deg)
+    translateY(10vw);
+    transform-origin: bottom;
+}
+
+.single-rb .front-sideInner .box-inner,
+.single-rb .back-sideInner .box-inner,
+.single-rb .right-sideInner .box-inner,
+.single-rb .left-sideInner .box-inner,
+.single-rb .top-sideInner .box-inner,
+.single-rb .bottom-sideInner .box-inner
+{
+    height: 10vw;
+    width:10vw;
+    outline: 0.25vw solid black;
+}
+.single-rb .front-side,
+.single-rb .back-side,
+.single-rb .right-side,
+.single-rb .left-side,
+.single-rb .top-side,
+.single-rb .bottom-side
+{
+    position: absolute;
+    width:20vw;
+    height:20vw;
+    margin:-5vw;
+    margin-bottom: 0vw;
+}
+
+/*Inner squres**/
+.single-rb .front-sideInner,
+.single-rb .back-sideInner,
+.single-rb .right-sideInner,
+.single-rb .left-sideInner,
+.single-rb .top-sideInner,
+.single-rb .bottom-sideInner
+{
+    position: absolute;
+    width:10vw;
+    height:10vw;
+    background:gray;
+}
+
+.topInOne
+{
+    
+    transform: rotateX(-45deg) translate3d(0vw,-4vw, -4vw);
+    transform-origin: top;
+}
+.front-sideInner
+{
+    transform: translateZ(5vw);
+}
+
+.front-sideInner .box-inner
+{
+    background:gray;
+}
+
+.back-sideInner
+{
+    transform: rotateY(180deg) translateZ(5vw);
+}
+
+.right-sideInner
+{
+    transform: rotateY(90deg)
+        translateX(5vw);
+    transform-origin: right;
+}
+
+.left-sideInner
+{
+    transform: rotateY(-90deg)
+    translateX(-5vw);
+    transform-origin: left;
+}
+
+.top-sideInner
+{
+    
+    transform: rotateX(45deg) translate3d(0vw,-4vw, 4vw);
+    transform-origin: top;
+}
+.topInOne
+{
+    
+    transform: rotateX(-45deg) translate3d(0vw,-4vw, -4vw);
+    transform-origin: top;
+}
+.bottom-sideInner
+{
+    transform: rotateX(90deg)
+    translateY(5vw);
+    transform-origin: bottom;
+}
+</style>
+ <div class="card-groups">
+     <div class="cards">
+         <div class="iconb"></div>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem deleniti cupiditate deserunt totam numquam nihil minus, atque quam fuga, culpa voluptatem laboriosam? Qui ut dicta reprehenderit nam nobis! Voluptatem?</p>
+     </div>
+     
+      <div class="cards">
+         <div class="iconb"></div>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem deleniti cupiditate deserunt totam numquam nihil minus, atque quam fuga, culpa voluptatem laboriosam? Qui ut dicta reprehenderit nam nobis! Voluptatem?</p>
+     </div>
+     
+      <div class="cards">
+         <div class="iconb"></div>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem deleniti cupiditate deserunt totam numquam nihil minus, atque quam fuga, culpa voluptatem laboriosam? Qui ut dicta reprehenderit nam nobis! Voluptatem?</p>
+     </div>
+      <div class="cards">
+         <div class="iconb"></div>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem deleniti cupiditate deserunt totam numquam nihil minus, atque quam fuga, culpa voluptatem laboriosam? Qui ut dicta reprehenderit nam nobis! Voluptatem?</p>
+     </div>
+      <div class="cards">
+         <div class="iconb"></div>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dolorem deleniti cupiditate deserunt totam numquam nihil minus, atque quam fuga, culpa voluptatem laboriosam? Qui ut dicta reprehenderit nam nobis! Voluptatem?</p>
+     </div>
+    
+ </div>
+    
 <!--**************-->
-<div class="rotating-box">
-    <div class="single-rb">
-        <div class="front-side">
-            <div class="box">
-                
-            </div>
-            
-            
-        </div>
-        <div class="front-sideInner">
-            <div class="box-inner"> </div> 
-        </div>
-        
-        <div class="back-side">
-            <div class="box"></div>
-        </div>
-         <div class="back-sideInner">
-            <div class="box-inner">
-                
-            </div>
-            
-            
-        </div>
-        
-        <div class="left-side">
-            <div class="box"></div>
-        </div>
-         <div class="left-sideInner">
-            <div class="box-inner">
-                
-            </div>
-            
-            
-        </div>
-        <div class="left-sideInner walk-way">
-            <div class="box-inner walk-inner"> </div> 
-        </div>
-        
-        <div class="right-side">
-            <div class="box"></div>
-        </div>
-         <div class="right-sideInner">
-            <div class="box-inner">
-                
-            </div>
-            
-            
-        </div>
-        
-        <div class="top-side">
-            <div class="box"></div>
-        </div>
-         <div class="top-sideInner topInOne">
-            <div class="box-inner">
-                
-            </div>
-            
-            
-        </div>
-        <div class="top-sideInner topInTwo">
-            <div class="box-inner">
-                
-            </div>
-            
-            
-        </div>
-        
-        <div class="bottom-side">
-            <div class="box"></div>
-        </div>
-         <div class="bottom-sideInner">
-            <div class="box-inner">
-                
-            </div>
-            
-            
-        </div>
-        
-        
-    </div>
-</div>
+ <div class="rotating-box">
+     <div class="single-rb">
+         <div class="front-side">
+             <div class="box">
+                 
+             </div>
+             
+             
+         </div>
+         <div class="front-sideInner">
+             <div class="box-inner"> </div> 
+         </div>
+         
+         <div class="back-side">
+             <div class="box"></div>
+         </div>
+          <div class="back-sideInner">
+             <div class="box-inner">
+                 
+             </div>
+             
+             
+         </div>
+         
+         <div class="left-side">
+             <div class="box"></div>
+         </div>
+          <div class="left-sideInner">
+             <div class="box-inner">
+                 
+             </div>
+             
+             
+         </div>
+         <div class="left-sideInner walk-way">
+             <div class="box-inner walk-inner"> </div> 
+         </div>
+         
+         <div class="right-side">
+             <div class="box"></div>
+         </div>
+          <div class="right-sideInner">
+             <div class="box-inner">
+                 
+             </div>
+             
+             
+         </div>
+         
+         <div class="top-side">
+             <div class="box"></div>
+         </div>
+          <div class="top-sideInner topInOne">
+             <div class="box-inner">
+                 
+             </div>
+             
+             
+         </div>
+         <div class="top-sideInner topInTwo">
+             <div class="box-inner">
+                 
+             </div>
+             
+             
+         </div>
+         
+         <div class="bottom-side">
+             <div class="box"></div>
+         </div>
+          <div class="bottom-sideInner">
+             <div class="box-inner">
+                 
+             </div>
+             
+             
+         </div>
+         
+         
+     </div>
+ </div>
 <div class="button-g">
 <button class="buttonBox but1">Front</button>
-<button class="buttonBox but2">Right</button>
-<button class="buttonBox but3">Left</button>
-<button class="buttonBox but4">Back</button>
+ <button class="buttonBox but2">Right</button>
+ <button class="buttonBox but3">Left</button>
+ <button class="buttonBox but4">Back</button>
+ 
+ <button class="buttonBox but5">Top</button>
+ <button class="buttonBox but6">Bottom</button>
 
-<button class="buttonBox but5">Top</button>
-<button class="buttonBox but6">Bottom</button>
 
-
-<button class="buttonBox but10">bottom</button>
-<button class="buttonBox but11">up</button>
-<button class="buttonBox but12">bottom</button>
-
-<button class="buttonBox but13">up</button>
+ <button class="buttonBox but10">bottom</button>
+ <button class="buttonBox but11">up</button>
+ <button class="buttonBox but12">bottom</button>
+ 
+ <button class="buttonBox but13">up</button>
 <button class="buttonBox but14">bottom</button>
-<button class="buttonBox but18">rotate auto</button>
-
+ <button class="buttonBox but18">rotate auto</button>
+ 
 </div>
-
-<script>
-$(function()
- {
-    $(".but1").click(function()
-    {
-        
-        $(".single-rb").css({"transform":"rotateY(90deg)","transition":"transform 1s linear"});  
-        
-        $(".rotating-box").css({"perspective":"800px", "transition":"perspective 1s linear"});
-    });
-    
-    
-    $(".but2").click(function()
-    {
-        $(".single-rb").css({"transform":"rotateY(180deg)","transition":"transform 1s linear"});  
-        
-        $(".rotating-box").css({"perspective":"800px", "transition":"perspective 1s linear"});
-    });
-    $(".but3").click(function()
-    {
-        $(".single-rb").css({"transform":"rotateY(-90deg)","transition":"transform 1s linear"});  
-        
-        $(".rotating-box").css({"perspective":"800px", "transition":"perspective 1s linear"});
-    });
-    $(".but4").click(function()
-    {
-        $(".single-rb").css({"transform":"rotateY(-180deg)","transition":"transform 1s linear"});  
-        $(".rotating-box").css({"perspective":"800px","transition":"perspective 1s linear"});  
-        
-    });
-    
-     $(".but5").click(function()
-    {
-        $(".single-rb").css({"transform":"rotateX(-90deg)","transition":"transform 1s linear"});  
-        
-        $(".rotating-box").css({"perspective":"800px", "transition":"perspective 1s linear"});
-    });
-    $(".but6").click(function()
-    {
-        $(".single-rb").css({"transform":"rotateX(-180deg)","transition":"transform 1s linear"});  
-        $(".rotating-box").css({"perspective":"800px","transition":"perspective 1s linear"});  
-        
-    });
-    
-     $(".but7").click(function()
-    {
-        $(".single-rb").css({"transform":"rotateX(90deg)","transition":"transform 1s linear"});  
-        
-        $(".rotating-box").css({"perspective":"800px", "transition":"perspective 1s linear"});
-    });
-    $(".but8").click(function()
-    {
-        $(".single-rb").css({"transform":"rotateX(180deg)","transition":"transform 1s linear"});  
-        $(".rotating-box").css({"perspective":"800px","transition":"perspective 1s linear"});  
-        
-    });
-    
-     $(".but9").click(function()
-    {
-        $(".single-rb").css({"transform":"rotateZ(-90deg)","transition":"transform 1s linear"});  
-        
-        $(".rotating-box").css({"perspective":"800px", "transition":"perspective 1s linear"});
-    });
-    $(".but10").click(function()
-    {
-        $(".single-rb").css({"transform":"rotateZ(-180deg)","transition":"transform 1s linear"});  
-        $(".rotating-box").css({"perspective":"800px","transition":"perspective 1s linear"});  
-        
-    }); 
-    
-    $(".but11").click(function()
-    {
-        $(".single-rb").css({"transform":"rotateZ(90deg)","transition":"transform 1s linear"});  
-        
-        $(".rotating-box").css({"perspective":"800px", "transition":"perspective 1s linear"});
-    });
-    $(".but12").click(function()
-    {
-        $(".single-rb").css({"transform":"rotateZ(180deg)","transition":"transform 1s linear"});  
-        $(".rotating-box").css({"perspective":"800px","transition":"perspective 1s linear"});  
-        
-    }); 
-    
-    $(".but13").click(function()
-    {
-        $(".single-rb").css({"transform":"rotateY(-45deg)","transition":"transform 1s linear"});  
-        
-        $(".rotating-box").css({"perspective":"800px", "transition":"perspective 1s linear"});
-    });
-    $(".but14").click(function()
-    {
-        $(".single-rb").css({"transform":"rotateY(-135deg)","transition":"transform 1s linear"});  
-        $(".rotating-box").css({"perspective":"800px","transition":"perspective 1s linear"});  
-        
-    }); $(".but15").click(function()
-    {
-        $(".single-rb").css({"transform":"rotateZ(45deg)","transition":"transform 1s linear"});  
-        
-        $(".rotating-box").css({"perspective":"800px", "transition":"perspective 1s linear"});
-    });
-    $(".but16").click(function()
-    {
-        $(".single-rb").css({"transform":"rotateZ(135deg)","transition":"transform 10s linear"});  
-        $(".rotating-box").css({"perspective":"800px","transition":"perspective 10s linear"});  
-        
-    });
-    
-    
-    
-    $(".but17").click(function()
-    {
-        $(".single-rb").css({"transform":"rotateX(-45deg)","transition":"transform 1s linear ease-in-out"});  
-        $(".rotating-box").css({"perspective":"800px","transition":"perspective 1s linear"});  
-        
-    });
-    
-       $(".but18").click(function()
-    {
-        $(".single-rb").css({"transform":"rotateY(340deg)","transition":"transform 5s linear ease-in-out"});  
-        $(".rotating-box").css({"perspective":"800px","transition":"perspective 5s linear"});  
-        
-    });
-    
-});
-</script>

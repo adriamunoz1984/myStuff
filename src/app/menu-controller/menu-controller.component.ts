@@ -12,10 +12,9 @@ export class MenuControllerComponent implements OnInit {
 
   ngOnInit() {
     $.fn.clickers = function(){ 
-      alert('You have successfully defined the function!'); 
-      console.log("Hello There");
+    $(".textG").css({"display":"block"});
   }
-  $(".dTop").click(function(){
+  $(".dTop").hover(function(){
       $.fn.clickers();
   });
   }
